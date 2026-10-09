@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейс: Реверс-инжиниринг узлов осветителя Dr-Kim</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .header {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #f8fafc;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .image-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .image-wrapper {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #090d16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .image-caption {
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      border-top: 1px solid #334155;
+      background: #182234;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .card ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #cbd5e1;
+      position: relative;
+      padding-left: 14px;
+    }
+    .card li::before {
+      content: "•";
+      color: #38bdf8;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .card li strong {
+      color: #f1f5f9;
+    }
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="badge">Reverse Engineering / Medical CAD</div>
+      <div class="title">Реверс-инжиниринг узлов медицинского осветителя Dr-Kim</div>
+      <div class="subtitle">Высокоточное восстановление геометрии кронштейна и шарнирных сопряжений по повреждённому оригинальному образцу</div>
+    </div>
+
+    <div class="gallery">
+      <div class="image-card">
+        <div class="image-wrapper">
+          <img src="drkim_1.png" alt="Кронштейн с направляющей дугой">
+        </div>
+        <div class="image-caption">Корпусной модуль фиксатора с дугой регулировки положения</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-wrapper">
+          <img src="drkim_2.png" alt="Шарнирная стойка">
+        </div>
+        <div class="image-caption">Шарнирная опора с криволинейным профилем и посадочной проушиной</div>
+      </div>
+
+      <div class="image-card">
+        <div class="image-wrapper">
+          <img src="drkim_3.png" alt="Цилиндрическая сопрягаемая втулка">
+        </div>
+        <div class="image-caption">Цилиндрический корпус светодиода</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Задача и специфика проекта</div>
+      <ul>
+        <li><strong>Проблема:</strong> Механическое разрушение оригинальных пластиковых узлов крепления налобного бестеневого медицинского осветителя Dr-Kim при отсутствии возможности закупки заводских запчастей отдельно от прибора.</li>
+        <li><strong>Методология реверс-инжиниринга:</strong> Прецизионное снятие линейных, радиальных и угловых размеров с повреждённых фрагментов детали с последующей реконструкцией исходной параметрической модели в CAD.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Инженерные решения и моделирование</div>
+      <ul>
+        <li><strong>Реконструкция сложной органической кривизны:</strong> Точный перенос дугообразных направляющих с переменным сечением для сохранения заводской эргономики посадки прибора на оголовье.</li>
+        <li><strong>Прецизионные сопряжения:</strong> Моделирование шарнирных узлов с учётом посадок под штифты, упорные буртики и направляющие пазы с соблюдением минимальных зазоров для исключения люфтов при регулировке света.</li>
+        <li><strong>Тонкостенные замковые элементы:</strong> Проектирование упругих защёлок (snap-fit) и замков на цилиндрической ответной втулке для быстросъёмной фиксации узла.</li>
+        <li><strong>Оптимизация под изготовление:</strong> Геометрия подготовлена для мелкосерийного воспроизводства (инженерная FDM / SLA-печать термостойкими износостойкими фотополимерами и пластиками).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Инструменты и компетенции</div>
+      <div class="stack-tags">
+        <span class="tag">Autodesk Fusion 360</span>
+        <span class="tag">Reverse Engineering</span>
+        <span class="tag">Medical Device Prototyping</span>
+        <span class="tag">Snap-fit Joints</span>
+        <span class="tag">High-Precision CAD</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
